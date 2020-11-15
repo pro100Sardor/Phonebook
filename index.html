@@ -37,39 +37,45 @@
 
     <!-- FOOTER part of page started -->
 
-    <footer class="site-container__footer">
+    <footer class="site-container__footer site-footer">
       <input class="form-control mb-3" type="search" id="searchInput" placeholder="Search...">
 
-      <button class="btn btn-block btn-success" type="button" data-toggle="modal" data-target="#addContactContainer">ADD CONTACT</button>
+      <button class="site-footer__add-button btn btn-block" type="button" data-toggle="modal" data-target="#addContactContainer">ADD CONTACT</button>
     </footer>
 
     <!-- The contact add modal -->
-    <div class="modal" id="addContactContainer">
+    <div class="modal fade" id="addContactContainer">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content content-modal">
 
           <!-- Modal Header -->
-          <div class="modal-header">
+          <div class="modal-header content-modal__header">
             <h4 class="modal-title">Add a new contact</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <button type="button" class="close content-modal__close" data-dismiss="modal">&times;</button>
           </div>
 
           <!-- Modal body -->
-          <div class="modal-body">
+          <div class="modal-body body-modal">
             <form id="phoneBookForm" action="https://echo.htmlacademy.ru" method="POST">
-              <input type="text" name="number_owner_firstname" id="numberOwnerFirstname" placeholder="First name">
+              <div class="form-group">
+                <label class="body-modal__label" for="numberOwnerFirstname">Enter the first name</label>
+                <input class="form-control mb-4" type="text" name="number_owner_firstname" id="numberOwnerFirstname" placeholder="A-Z a-z">
 
-              <input type="text" name="number_owner_lastname" id="numberOwnerLastname" placeholder="First name">
+                <label class="body-modal__label" for="numberOwnerLastname">Enter the last name</label>
+                <input class="form-control mb-4" type="text" name="number_owner_lastname" id="numberOwnerLastname" placeholder="A-Z a-z">
 
-              <input type="text" name="phone_number" id="phoneNumber">
+                <label class="body-modal__label" for="phoneNumber">Enter the phone number</label>
+                <input class="form-control mb-4" type="tel" name="phone_number" id="phoneNumber" placeholder="0-9">
 
-              <input type="text" name="number_owner_connection" id="numberOwnerConnection">
+                <label class="body-modal__label" for="numberOwnerConnection">Enter the connection</label>
+                <input class="form-control mb-4" type="text" name="number_owner_connection" id="numberOwnerConnection" placeholder="A-Z a-z">
+              </div>
             </form>
           </div>
 
           <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="submit" name="submit" value="submit" form="phoneBookForm">SAVE</button>
+          <div class="modal-footer content-modal__footer">
+            <button class="content-modal__footer-save-button btn" type="submit" name="submit" value="submit" form="phoneBookForm">SAVE</button>
           </div>
         </div>
       </div>
