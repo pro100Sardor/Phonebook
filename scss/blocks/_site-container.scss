@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   max-width: 800px;
+  min-width: 800px;
   background-color: $secondary-color;
 }
 
@@ -36,6 +37,36 @@
     height: 2px;
     background-color: $main-color;
     margin-bottom: 24px;
+  }
+}
+
+@include breakpoint-down (800px) {
+  .site-container {
+    min-width: 700px;
+  }
+}
+
+@include breakpoint-down (700px) {
+  .site-container {
+    min-width: 600px;
+  }
+}
+
+@include breakpoint-down (600px) {
+  .site-container {
+    min-width: 500px;
+  }
+}
+
+@include breakpoint-down (500px) {
+  .site-container {
+    min-width: 400px;
+  }
+}
+
+@include breakpoint-down (400px) {
+  .site-container {
+    min-width: 300px;
   }
 }
 

@@ -27,8 +27,14 @@
 
     <!-- MAIN part of page started -->
 
-    <main class="site-container__main main-block py-4">
-      <p class="text-center mb-0"><span class="main-block__TLDR">No contact</span> has been added to <span class="main-block__TLDR">the phonebook yet .</span> <span class="main-block__TLDR">Click</span> the <span class="main-block__TLDR">"Add Contact"</span> button below <span class="main-block__TLDR">to add a contact</span></p>
+    <main class="site-container__main main-block py-4" id="siteMain">
+      <div class="table-responsive">
+        <table class="table table-borderless site-main__table" id="phonebookTable">
+        </table>
+      </div>
+      <p class="text-center mb-0" id="initialContactText">
+        <span class="main-block__TLDR">No contact</span> has been added to <span class="main-block__TLDR">the phonebook yet .</span> <span class="main-block__TLDR">Click</span> the <span class="main-block__TLDR">"Add Contact"</span> button below <span class="main-block__TLDR">to add a contact</span>
+      </p>
       <div id="phonebookInfo"></div>
     </main>
 
@@ -56,19 +62,19 @@
 
           <!-- Modal body -->
           <div class="modal-body body-modal">
-            <form id="phoneBookForm" action="https://echo.htmlacademy.ru" method="POST">
+            <form id="phoneBookForm" action="https://echo.htmlacademy.ru" method="POST" autocomplete="off">
               <div class="form-group">
                 <label class="body-modal__label" for="numberOwnerFirstname">Enter the first name</label>
-                <input class="form-control mb-4" type="text" name="number_owner_firstname" id="numberOwnerFirstname" placeholder="A-Z a-z">
+                <input class="form-control mb-4" type="text" name="number_owner_firstname" id="numberOwnerFirstname" placeholder="A-Z a-z" spellcheck="false" required>
 
                 <label class="body-modal__label" for="numberOwnerLastname">Enter the last name</label>
-                <input class="form-control mb-4" type="text" name="number_owner_lastname" id="numberOwnerLastname" placeholder="A-Z a-z">
+                <input class="form-control mb-4" type="text" name="number_owner_lastname" id="numberOwnerLastname" placeholder="A-Z a-z" spellcheck="false" required>
 
                 <label class="body-modal__label" for="phoneNumber">Enter the phone number</label>
-                <input class="form-control mb-4" type="tel" name="phone_number" id="phoneNumber" placeholder="0-9">
+                <input class="form-control mb-4" type="tel" name="phone_number" id="phoneNumber" placeholder="0-9" required>
 
                 <label class="body-modal__label" for="numberOwnerConnection">Enter the connection</label>
-                <input class="form-control mb-4" type="text" name="number_owner_connection" id="numberOwnerConnection" placeholder="A-Z a-z">
+                <input class="form-control mb-4" type="text" name="number_owner_connection" id="numberOwnerConnection" placeholder="A-Z a-z" spellcheck="false" required>
               </div>
             </form>
           </div>
@@ -91,5 +97,15 @@
   <script src="./js/jquery-3.5.1.min.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/scripts.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#phonebookTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>
 </body>
 </html>
