@@ -6,6 +6,10 @@
   background-color: $secondary-color;
 }
 
+.page__body--nojs .site-container {
+  display: none;
+}
+
 .site-container__header {
   &::after {
     content: "";

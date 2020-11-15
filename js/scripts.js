@@ -22,8 +22,11 @@ elPhoneBookForm.addEventListener('submit', function(evt) {
   evt.preventDefault();
 
   var numberOwnerFirstname = elNumberOwnerFirstname.value.trim();
-  // numberOwnerFirstname = numberOwnerFirstname.charAt(0).toUpperCase() + numberOwnerFirstname.slice(1);
+  numberOwnerFirstname = numberOwnerFirstname.charAt(0).toUpperCase() + numberOwnerFirstname.slice(1);
+
   var numberOwnerLastname = elNumberOwnerLastname.value.trim();
+  numberOwnerLastname = numberOwnerLastname.charAt(0).toUpperCase() + numberOwnerLastname.slice(1);
+
   var phoneNumber = elPhoneNumber.value.trim();
   var numberOwnerConnection = elNumberOwnerConnection.value.trim();
 
@@ -46,9 +49,9 @@ elPhoneBookForm.addEventListener('submit', function(evt) {
 
   elPhonebookTable.appendChild(newTr);
 
-  // numberOwnerFirstname.value = '';
-  // numberOwnerLastname.value = '';
-  // phoneNumber.value = '';
-  // numberOwnerConnection.value = '';
+  elNumberOwnerFirstname.value = '';
+  elNumberOwnerLastname.value = '';
+  elPhoneNumber.value = '';
+  elNumberOwnerConnection.value = '';
 
 });
