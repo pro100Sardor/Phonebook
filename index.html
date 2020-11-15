@@ -14,12 +14,12 @@
 <body class="page__body page__body--nojs" id="siteBody">
   <script src="./js/nojs.min.js"></script>
 
-  <div class="site-container mx-auto my-auto">
+  <div class="site-container mx-auto rounded p-4">
     <!-- HEADER part of page started -->
     <h1 class="sr-only">this website is an electronic view of your phonebook</h1>
 
-    <header class="">
-      <h2 class="display-4 text-center">ePhonebook</h2>
+    <header class="site-container__header">
+      <h2 class="display-4 text-center mb-3 site-container__title">ePhonebook</h2>
     </header>
 
     <!-- HEADER part of page ended -->
@@ -27,8 +27,8 @@
 
     <!-- MAIN part of page started -->
 
-    <main class="page__main">
-      <p>No contact has been added to the phonebook yet. Click the "Add Contact" button below to add a contact</p>
+    <main class="site-container__main main-block py-4">
+      <p class="text-center mb-0"><span class="main-block__TLDR">No contact</span> has been added to <span class="main-block__TLDR">the phonebook yet .</span> <span class="main-block__TLDR">Click</span> the <span class="main-block__TLDR">"Add Contact"</span> button below <span class="main-block__TLDR">to add a contact</span></p>
       <div id="phonebookInfo"></div>
     </main>
 
@@ -37,23 +37,43 @@
 
     <!-- FOOTER part of page started -->
 
-    <footer>
-      <input type="search" id="searchInput" placeholder="Search...">
+    <footer class="site-container__footer">
+      <input class="form-control mb-3" type="search" id="searchInput" placeholder="Search...">
 
-      <button type="button" data-toggle="modal" data-target="#">ADD CONTACT</button>
+      <button class="btn btn-block btn-success" type="button" data-toggle="modal" data-target="#addContactContainer">ADD CONTACT</button>
     </footer>
 
-    <!-- modal -->
-    <form id="phoneBookForm" action="https://echo.htmlacademy.ru" method="POST">
-      <input type="text" name="number_owner_firstname" id="numberOwnerFirstname" placeholder="First name">
+    <!-- The contact add modal -->
+    <div class="modal" id="addContactContainer">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-      <input type="text" name="number_owner_lastname" id="numberOwnerLastname" placeholder="First name">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Add a new contact</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
 
-      <input type="text" name="phone_number" id="phoneNumber">
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form id="phoneBookForm" action="https://echo.htmlacademy.ru" method="POST">
+              <input type="text" name="number_owner_firstname" id="numberOwnerFirstname" placeholder="First name">
 
-      <input type="text" name="number_owner_connection" id="numberOwnerConnection">
-      <button type="submit" name="submit" value="submit">save</button>
-    </form>
+              <input type="text" name="number_owner_lastname" id="numberOwnerLastname" placeholder="First name">
+
+              <input type="text" name="phone_number" id="phoneNumber">
+
+              <input type="text" name="number_owner_connection" id="numberOwnerConnection">
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="submit" name="submit" value="submit" form="phoneBookForm">SAVE</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- FOOTER part of page ended -->
 
