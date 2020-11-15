@@ -38,3 +38,19 @@
     margin-bottom: 24px;
   }
 }
+
+@include breakpoint-down (440px) {
+  .site-container__title {
+    font-size: 46px;
+  }
+}
+
+@include breakpoint-down (380px) {
+  .site-container__title {
+    font-size: 36px;
+  }
+
+  &::before {
+    margin-right: 8px;
+  }
+}

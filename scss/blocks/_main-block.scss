@@ -1,3 +1,15 @@
 .main-block__TLDR {
   font-size: 30px;
 }
+
+@include breakpoint-down (440px) {
+  .main-block__TLDR {
+    font-size: 25px;
+  }
+}
+
+@include breakpoint-down (380px) {
+  .main-block__TLDR {
+    font-size: 20px;
+  }
+}

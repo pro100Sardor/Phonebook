@@ -1,4 +1,7 @@
 .page__body {
   background-color: $main-color;
-  padding-top: 100px;
+  padding: {
+    top: 100px;
+    bottom: 100px;
+  }
 }
