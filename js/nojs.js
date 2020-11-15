@@ -1,3 +1,3 @@
-var siteBody = document.querySelector('#siteBody');
+var elSiteBody = document.querySelector('#siteBody');
 
-siteBody.classList.remove('page__body--nojs');
+elSiteBody.classList.remove('page__body--nojs');
