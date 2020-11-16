@@ -5,3 +5,11 @@ function $_ (selector, node = document) {
 function $$_ (selector, node = document) {
   return node.querySelectorAll(selector);
 }
+
+function isInputEmpty (inputValue) {
+  if (inputValue === '') {
+    return true;
+  } else {
+    return false;
+  }
+}
