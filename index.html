@@ -65,10 +65,12 @@
 
         <!-- Modal body -->
         <div class="modal-body body-modal">
-          <form id="phoneBookForm" action="https://echo.htmlacademy.ru" method="POST" autocomplete="off">
+          <form class="needs-validation" id="phoneBookForm" action="https://echo.htmlacademy.ru" method="POST" autocomplete="off">
             <div class="form-group">
               <label class="body-modal__label" for="numberOwnerFirstname">Enter the first name</label>
               <input class="form-control mb-4" type="text" name="number_owner_firstname" id="numberOwnerFirstname" placeholder="A-Z a-z" spellcheck="false" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
 
               <label class="body-modal__label" for="numberOwnerLastname">Enter the last name</label>
               <input class="form-control mb-4" type="text" name="number_owner_lastname" id="numberOwnerLastname" placeholder="A-Z a-z" spellcheck="false" required>
