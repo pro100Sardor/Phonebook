@@ -14,7 +14,7 @@
 <body class="page__body page__body--nojs px-4" id="siteBody">
   <script src="./js/nojs.min.js"></script>
 
-  <div class="site-container mx-auto rounded p-4">
+  <div class="site-container mx-auto rounded p-4 shadow">
     <!-- HEADER part of page started -->
     <h1 class="sr-only">this website is an electronic view of your phonebook</h1>
 
@@ -65,21 +65,35 @@
 
         <!-- Modal body -->
         <div class="modal-body body-modal">
-          <form class="needs-validation" id="phoneBookForm" action="https://echo.htmlacademy.ru" method="POST" autocomplete="off">
+          <form class="was-validated" id="phoneBookForm" action="https://echo.htmlacademy.ru" method="POST" autocomplete="off">
             <div class="form-group">
-              <label class="body-modal__label" for="numberOwnerFirstname">Enter the first name</label>
-              <input class="form-control mb-4" type="text" name="number_owner_firstname" id="numberOwnerFirstname" placeholder="A-Z a-z" spellcheck="false" required>
-              <div class="valid-feedback">Valid.</div>
-              <div class="invalid-feedback">Please fill out this field.</div>
+              <label class="body-modal__label mb-4 d-block">
+                Enter the first name
+                <input class="form-control" type="text" name="number_owner_firstname" id="numberOwnerFirstname" placeholder="A-Z a-z" spellcheck="false" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </label>
 
-              <label class="body-modal__label" for="numberOwnerLastname">Enter the last name</label>
-              <input class="form-control mb-4" type="text" name="number_owner_lastname" id="numberOwnerLastname" placeholder="A-Z a-z" spellcheck="false" required>
+              <label class="body-modal__label mb-4 d-block" for="numberOwnerLastname">
+                Enter the last name
+                <input class="form-control" type="text" name="number_owner_lastname" id="numberOwnerLastname" placeholder="A-Z a-z" spellcheck="false" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </label>
 
-              <label class="body-modal__label" for="phoneNumber">Enter the phone number</label>
-              <input class="form-control mb-4" type="tel" name="phone_number" id="phoneNumber" placeholder="0-9" required>
+              <label class="body-modal__label mb-4 d-block" for="phoneNumber">
+                Enter the phone number
+                <input class="form-control" type="tel" name="phone_number" id="phoneNumber" placeholder="0-9" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </label>
 
-              <label class="body-modal__label" for="numberOwnerConnection">Enter the connection</label>
-              <input class="form-control mb-4" type="text" name="number_owner_connection" id="numberOwnerConnection" placeholder="A-Z a-z" spellcheck="false" required>
+              <label class="body-modal__label mb-4 d-block" for="numberOwnerConnection">
+                Enter the connection
+                <input class="form-control" type="text" name="number_owner_connection" id="numberOwnerConnection" placeholder="A-Z a-z" spellcheck="false" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </label>
             </div>
           </form>
         </div>
@@ -111,5 +125,27 @@
       });
     });
     </script>
+
+  <!-- Modal field validation -->
+  <script>
+    // Disable form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Get the forms we want to add validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
 </body>
 </html>
